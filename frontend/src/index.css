@@ -1,0 +1,226 @@
+@font-face {
+	font-family: 'PTMonoWebBold';
+	src:
+		url('fonts/pt-mono_bold.woff2') format('woff2'),
+		url('fonts/pt-mono_bold.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'PTMonoWebRegular';
+	src:
+		url('fonts/pt-mono_regular.woff2') format('woff2'),
+		url('fonts/pt-mono_regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+body, html{
+    background-color: #212121;
+    padding: 0;
+    margin: 0;
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: 83px 83px 83px 83px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 335px;
+    height: 335px;
+    background-color: #27292A;
+    padding: 31px;
+    border-radius: 13px;
+}
+.letter{
+    width: 75px;
+    height: 66px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: PTMonoWebBold, serif;
+    font-size:50px;
+    margin: 5px;
+    display:inline-block;
+    background-color:#FFFFFF;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 13px;
+    padding-top: 9px;
+}
+.letter_pressed{
+    width: 73px;
+    height: 64px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: PTMonoWebBold, serif;
+    font-size:50px;
+    margin: 5px;
+    display:inline-block;
+    color: #FFFFFF;
+    background-color:#828282;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 13px;
+    padding-top: 11px;
+    padding-left: 2px;
+}
+.player_zone{
+    display: grid;
+    position: absolute;
+    grid-template-columns: 485px 485px;
+    top: 65%;
+}
+.scoreboard{
+    display:inline-block;
+    width: 335px;
+    height: 335px;
+    background-color: #27292A;
+    padding: 31px;
+    border-radius: 13px;
+    margin: 0 auto;
+}
+.name{
+    font-family: PTMonoWebBold, serif;
+    font-size:2.3vh;
+    color:white;
+    width: 20vw;
+    transform: translate(0%, -300%);
+}
+.word{
+    color:lightgrey;
+    font-family: PTMonoWebRegular, serif;
+    font-size:1.8vh;
+    padding-bottom: 0.5vw;
+}
+.current{
+    font-family: PTMonoWebRegular, serif;
+    font-size:2.3vh;
+    color:lightgrey;
+    text-align: center;
+    transform: translate(0%, 100%);
+    background-color: #27292A;
+    width: 380px;
+    position: absolute;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.h{
+    font-family: PTMonoWebBold, serif;
+    font-size:3.5vh;
+    color:white;
+    width: 20vw;
+    margin-bottom: 2vh;
+}
+.smalltext{
+    font-family: PTMonoWebBold, serif;
+    font-size:1.5vh;
+    color: #686969;
+    margin-bottom: 1vh;
+    width: 20vw;
+}
+.email_input{
+    background-color: #27292A;
+    color:lightgrey;
+    font-family: PTMonoWebRegular, serif;
+    font-size:1.8vh;
+    border: 0;
+    padding: 2.5vh 0.8vw;
+    border-radius: 1.2vh;
+    max-width: 20vw;
+    margin-bottom: 1vh;
+}
+.name_input{
+    background-color: #27292A;
+    color:lightgrey;
+    font-family: PTMonoWebRegular, serif;
+    font-size:1.8vh;
+    border: 0;
+    padding: 2.5vh 0.8vw;
+    border-radius: 1.2vh;
+    max-width: 20vw;
+    margin-bottom: 1vh;
+}
+.password_input{
+    background-color: #27292A;
+    color:lightgrey;
+    font-family: PTMonoWebRegular, serif;
+    font-size:1.8vh;
+    border: 0;
+    padding: 2.5vh 0.8vw;
+    border-radius: 1.2vh;
+    max-width: 20vw;
+    margin-bottom: 1vh;
+}
+.btn{
+    background-color: #2A405A;
+    color:#3F8AE0;
+    font-family: PTMonoWebRegular, serif;
+    font-size:1.8vh;
+    border: 0;
+    padding: 2.5vh 0.8vw;
+    border-radius: 1.2vh;
+    width: 20vw;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.btn_highlighted{
+    background-color: #3F8AE0;
+    color:#FFFFFF;
+    font-family: PTMonoWebRegular, serif;
+    font-size:1.8vh;
+    border: 0;
+    padding: 2.5vh 0.8vw;
+    border-radius: 1.2vh;
+    width: 20vw;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.form_wrapper{
+    display: grid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.vaild_password{
+    color: #81D9A6;
+    font-family: PTMonoWebRegular, serif;
+    font-size:1.5vh;
+}
+.invaild_password{
+    color: red;
+    font-family: PTMonoWebRegular, serif;
+    font-size:1.5vh;
+}
+.valid{
+    background-color: #81D9A6;
+    width: 8vw;
+    height: 0.4vh;
+    border-radius: 1.2vh;
+}
+.invalid{
+    background-color: red;
+    width: 5vw;
+    height: 0.4vh;
+    border-radius: 1.2vh;
+}
+.status_wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1vh;
+    margin-bottom: 1vh;
+}
+.game_wrapper{
+    display: grid;
+    justify-items: center;
+}
