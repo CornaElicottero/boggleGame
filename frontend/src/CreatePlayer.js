@@ -21,7 +21,7 @@ const handleCodeChange = (e) => {
   if (game_code.length === 4) {
     timerId = setTimeout(async () => {
       try {
-        const response = await fetch(`http://10.13.13.56:8000/games/${game_code}`);
+        const response = await fetch(`http://localhost:8000/games/${game_code}`);
         if (response.ok) {
           const data = await response.json();
           const boardArray = data.board
@@ -32,7 +32,7 @@ const handleCodeChange = (e) => {
           setBoard(boardArray);
           console.log('Полученная доска:', board);
           // window.location.href = 'http://10.13.13.56:3000/join/${board}';
-          const responseName = await fetch('http://10.13.13.56:8000/players/', {
+          const responseName = await fetch('http://localhost:8000/players/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ const handleCodeChange = (e) => {
   const handleNewGame = async (e) => {
     e.preventDefault();
 
-    const response = await fetch('http://10.13.13.56:8000/players/', {
+    const response = await fetch('http://localhost:8000/players/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

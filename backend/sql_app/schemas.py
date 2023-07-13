@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 from uuid import UUID
-from typing import Optional
+from typing import Optional, List
 
 
 class PlayerCreate(BaseModel):
@@ -9,10 +9,20 @@ class PlayerCreate(BaseModel):
     password: str
 
 
+class Board(BaseModel):
+    board: List[list]
+
+
+class TokenSchema(BaseModel):
+    access_token: str
+
+
 class PlayerRead(BaseModel):
     email: str
     password: str
-    salt: str
+    name: str
+    matches: int
+    wins: int
 
     class Config:
         orm_mode = True

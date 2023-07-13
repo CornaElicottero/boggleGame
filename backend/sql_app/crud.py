@@ -8,10 +8,6 @@ def get_player(db: Session, email: str):
     return db.query(models.Player).filter(models.Player.email == email).first()
 
 
-def get_player_password(db: Session, email: str):
-    return db.query(models.Player.salt, models.Player.password).filter(models.Player.email == email).first()
-
-
 def create_player(db: Session, player: schemas.PlayerCreate, salt):
     db_player = models.Player(
         id=str(uuid.uuid4()),
