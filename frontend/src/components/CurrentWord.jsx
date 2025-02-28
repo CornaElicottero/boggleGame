@@ -5,6 +5,6 @@ const CurrentWord = ({ currentWord }) => {
 			{currentWord}
 		</div>
 	);
-};
+}
 
 export default CurrentWord

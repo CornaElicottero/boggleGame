@@ -1,5 +1,5 @@
-import { BrowserRouter, Route, Routes, useParams } from 'react-router-dom';
-import {GenerateBoard, Authorization, Login, Registration, Messages} from "./components/index";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { GenerateBoard, Authorization, Login, Registration } from "./pages/index.js";
 import './index.css';
 
 const App = () => {
@@ -10,7 +10,6 @@ const App = () => {
                 <Route path="/game" element={<GenerateBoard />} />
                 <Route path="/sign-up" element={<Registration/>} />
                 <Route path="/login" element={<Login />}/>
-                <Route path="/messages" element={<Messages/>}/>
             </Routes>
         </BrowserRouter>
     );

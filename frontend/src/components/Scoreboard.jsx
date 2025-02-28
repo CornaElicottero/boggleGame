@@ -1,21 +1,20 @@
 import React from 'react';
 
-const Scoreboard = ({correctWords}) => {
+const Scoreboard = ({playerInfo}) => {
     return(
         <div className={"player_zone"}>
-            <div className={"scoreboard"}>
-                <div className={"name"}>zageev</div>
-                {/*<div className={"name"} key={}>{player_one}</div>*/}
-                {correctWords.map((word, index) => (
-                    <div className={"word"} key={index}>{word}</div>
-                ))}
-            </div>
-            <div className={"scoreboard"}>
-                <div className={"name"}>elicot2346</div>
-                {correctWords.map((word, index) => (
-                    <div className={"word"} key={index}>{word}</div>
-                ))}
-            </div>
+            {playerInfo.map((player, playerIndex) =>
+                <div className={"scoreboard"} key={playerIndex}>
+                    <div className={"name"}>
+                        {player["username"]}
+                    </div>
+                    {player["words"].map((word, wordIndex) => (
+                        <div className={"word"} key={wordIndex}>
+                            {word}
+                        </div>
+                    ))}
+                </div>
+            )}
         </div>
     )
 }
