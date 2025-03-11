@@ -54,7 +54,6 @@ def get_db():
 async def protected_route(request: Request):
     data = await request.json()
     access_token = data.get("access_token")
-    print(access_token)
     # refresh_token = request.cookies.get("refresh_token")
     if access_token is not None:
         try:
@@ -91,10 +90,6 @@ async def protected_route(request: Request):
 #         res['status'] = False
 #     return res
 
-
-
-
-
 @app.post("/register/")
 def create_player(player: schemas.PlayerCreate):
     db = database.SessionLocal()
@@ -120,23 +115,26 @@ async def websocket_endpoint(
         db: Session = Depends(get_db)
 ):
     await manager.connect(websocket)
+    try:
+
     # try:
     #     decoded_token = jwt.decode(access_token, SECRET_KEY, ALGORITHM)
     #     user_id = decoded_token["user_id"]
         # user_id = json.loads(decoded_token['sub'].replace("'", '"'))["user_id"]
-    while True:
-        data = await websocket.receive_text()
-        try:
-            data = json.loads(data)
-            await handler.handle(
-                action=data["action"],
-                payload=data["payload"],
-                db=db,
-                websocket=websocket,
-            )
-        except WebSocketDisconnect:
-            handler.handle_disconnect_action(websocket)
-            manager.disconnect(websocket)
+        while True:
+            data = await websocket.receive_text()
+            try:
+                data = json.loads(data)
+                await handler.handle(
+                    action=data["action"],
+                    payload=data["payload"],
+                    websocket=websocket,
+                )
+            except json.JSONDecodeError:
+                print("Decoding Error")
+                continue
+    except WebSocketDisconnect:
+        await handler.handle_disconnect_action(websocket)
     # except (jwt.ExpiredSignatureError, jwt.DecodeError):
     #     handler.handle_disconnect_action(session_id)
     #     manager.disconnect(websocket)

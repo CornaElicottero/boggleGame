@@ -2,11 +2,11 @@ import json
 
 
 def update_status(
-        update_session,
+        update_data,
 ):
     return json.dumps(
         {
-            "session":  update_session
+            "data":  update_data
         },
         ensure_ascii=False
     )

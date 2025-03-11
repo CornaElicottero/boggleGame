@@ -47,6 +47,9 @@ dependencies:
   react-cookie:
     specifier: ^4.1.1
     version: 4.1.1(react@18.3.1)
+  react-countdown:
+    specifier: ^2.3.6
+    version: 2.3.6(react-dom@18.3.1)(react@18.3.1)
   react-dom:
     specifier: ^18.2.0
     version: 18.3.1(react@18.3.1)
@@ -9413,6 +9416,17 @@ packages:
       hoist-non-react-statics: 3.3.2
       react: 18.3.1
       universal-cookie: 4.0.4
+    dev: false
+
+  /react-countdown@2.3.6(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-ZfX6S08Hb6x6W6eCn1hMDvxPICI/T30fd+gaeVTCR/2cGZ2WJ3f26e4ImNIMX1fHkopJrUdnRpWXP13/D39+gg==}
+    peerDependencies:
+      react: '>= 15'
+      react-dom: '>= 15'
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
     dev: false
 
   /react-dev-utils@12.0.1(eslint@8.57.1)(typescript@5.7.3)(webpack@5.98.0):
